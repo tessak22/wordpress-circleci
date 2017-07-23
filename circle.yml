@@ -41,7 +41,7 @@ dependencies:
 test:
   override:
     # This is just for us to see that the wp-cfm plugin was installed
-    - ./wp-cli.phar plugin list --path=wordpress
+    - ./wp-cli.phar plugin list --path=web
     
     # Finally, run our Behat features
     - vendor/bin/behat
