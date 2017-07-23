@@ -37,24 +37,14 @@ dependencies:
     
     # And use WP-CLI to install wp-cfm
     #- ./wp-cli.phar plugin install wp-cfm
-    
-  post:
-    # Copy Apache conf into `site-available`
-    - cp ~/wordpress-circleci/apache-ci.conf /etc/apache2/sites-available
-    
-    # Use `a2ensite` to create a symlink for the config
-    - a2ensite apache-ci.conf
-    
-    # Restart the Apache server
-    - sudo service apache2 restart
 
 test:
   override:
     # This is just for us to see that the wp-cfm plugin was installed
-    - ./wp-cli.phar plugin list --path=web
+    #- ./wp-cli.phar plugin list --path=web
     
     # Finally, run our Behat features
-    - vendor/bin/behat
+    #- vendor/bin/behat
 
 deployment:
   production:
