@@ -8,16 +8,15 @@ machine:
   php:
     version: 7.1.3
     
-  services:
-    - mysql
+  environment:
+    ENVIRONMENT: testing
+    DB_URL: 127.0.0.1
+    DB_NAME: circle_test
+    DB_USER: ubuntu
 
   # This will be added to the `/etc/hosts` file
   hosts:
     wordpress-circleci.dev: 127.0.0.1
-
-database:
-  override:
-    - mysql -u ubuntu "create database wordpress"
 
 dependencies:
   pre:
@@ -27,7 +26,7 @@ dependencies:
     # Make sure WP-CLI is executable
     - chmod +x wp-cli.phar
     
-    # Download WordPress into `web` directory
+    # Download WordPress into `wordpress` directory
     - ./wp-cli.phar core download --allow-root --path=wordpress
     
     # Generate `wp-config.php` file
