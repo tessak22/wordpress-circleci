@@ -27,7 +27,7 @@ dependencies:
     - ./wp-cli.phar core download --allow-root --path=web
     
     # Generate `wp-config.php` file
-    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbuser=ubuntu --dbhost=localhost --path=web
+    - ./wp-cli.phar core config --allow-root --dbname=circle_test --dbuser=ubuntu --dbhost=localhost --path=web
     
     # Install WordPress
     - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://wordpress-circleci.dev:8080 --title=WordPress --path=web
