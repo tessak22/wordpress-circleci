@@ -11,8 +11,9 @@ machine:
   environment:
     ENVIRONMENT: testing
     DB_URL: 127.0.0.1
-    DB_NAME: circle_test
+    DB_NAME: wordpress
     DB_USER: ubuntu
+    DB_PASSWORD: ubuntu
 
   # This will be added to the `/etc/hosts` file
   hosts:
@@ -30,7 +31,7 @@ dependencies:
     - ./wp-cli.phar core download --allow-root --path=wordpress
     
     # Generate `wp-config.php` file
-    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbuser=ubuntu --dbhost=localhost --path=wordpress
+    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbuser=ubuntu --dbpass=ubuntu --dbhost=localhost --path=wordpress
     
     - ./wp-cli.phar core config path
     
