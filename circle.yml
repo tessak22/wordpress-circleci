@@ -15,6 +15,10 @@ machine:
   hosts:
     wordpress-circleci.dev: 127.0.0.1
 
+database:
+  override:
+    - mysql -u ubuntu circle_test
+
 dependencies:
   pre:
     # Use cURL to fetch WP-CLI
