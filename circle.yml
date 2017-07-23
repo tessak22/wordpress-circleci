@@ -14,8 +14,6 @@ machine:
 
 dependencies:
   pre:
-    # No password is required for the MySQL user `ubuntu`
-    - mysql -u wordpress -e "create database wordpress"
     
     # Use cURL to fetch WP-CLI
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -34,9 +32,6 @@ dependencies:
     
     # And use WP-CLI to install wp-cfm
     - ./wp-cli.phar plugin install wp-cfm
-    
-	 # Install gulp
-	 - npm install gulp-cli
 
 test:
   override:
