@@ -34,9 +34,6 @@ dependencies:
     
     # And use WP-CLI to install wp-cfm
     - ./wp-cli.phar plugin install wp-cfm
-    
-	 # Install gulp
-	 - npm install gulp-cli
 
 test:
   override:
