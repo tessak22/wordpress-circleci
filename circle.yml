@@ -33,10 +33,10 @@ dependencies:
     - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbuser=ubuntu --dbhost=localhost --path=wordpress
     
     # Install WordPress
-    - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://wordpress-circleci.dev:8080 --title=WordPress --path=wordpress
+    #- ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://wordpress-circleci.dev:8080 --title=WordPress --path=wordpress
     
     # And use WP-CLI to install wp-cfm
-    - ./wp-cli.phar plugin install wp-cfm
+    #- ./wp-cli.phar plugin install wp-cfm
     
   post:
     # Copy Apache conf into `site-available`
