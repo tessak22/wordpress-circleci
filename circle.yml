@@ -14,9 +14,6 @@ machine:
 
 dependencies:
   pre:
-    # No password is required for the MySQL user `ubuntu`
-    - mysql -u ubuntu -e "create database wordpress"
-    
     # Use cURL to fetch WP-CLI
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     
